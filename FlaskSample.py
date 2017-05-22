@@ -7,6 +7,10 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello World!'
 
+@app.route('/test')
+def yahho():
+    return render_
+
 
 if __name__ == '__main__':
     app.run()
