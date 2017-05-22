@@ -8,9 +8,9 @@ def hello_world():
     return 'Hello World!'
 
 
-@app.route('/test')
-def yahho():
-    return render_template('index.html', message="sdasdosiadapdokasjdoiasjd")
+@app.route('/test/<name>')
+def yahho(name=None):
+    return render_template('index.html', message=name)
 
 
 if __name__ == '__main__':
