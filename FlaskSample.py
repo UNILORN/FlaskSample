@@ -2,6 +2,7 @@
 from flask import Flask, render_template, session
 
 app = Flask(__name__)
+app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 
 # ルーティングと表示
@@ -18,16 +19,16 @@ def html_test(name=None):
 
 # session
 @app.route('/session/<name>')
-def session_test(name=None):
+def session_test(name):
     session['session'] = name
     return render_template('index.html', message=name)
 
 
 # session show
 @app.route('/session/show')
-def sessionshow_test():
+def session_show_test():
     name = session['session']
-    return render_template('index.html', message=name)
+    return render_template('index.html', message=u'あなたが設定したセッションは「' + name + u'」です。')
 
 
 if __name__ == '__main__':
