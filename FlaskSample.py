@@ -1,7 +1,9 @@
 # coding=utf-8
 from flask import Flask, render_template, session
+from flask_mysqldb import MySQL
 
 app = Flask(__name__)
+mysql = MySQL(app)
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 
